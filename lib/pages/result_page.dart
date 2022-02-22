@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:agricure/pdf/pdf_gen.dart';
 import 'package:agricure/services/http.dart';
 import 'package:agricure/widgets/login_button.dart';
 
@@ -97,16 +96,6 @@ class _ResultPageState extends State<ResultPage> {
                   setState(() {
                     isLoading = true;
                   });
-                  bool result = await makeReport(
-                    plant: widget.plant,
-                    disease: widget.disease,
-                    remedy: widget.remedy,
-                  );
-                  setState(() {
-                    isLoading = false;
-                  });
-                  // ignore: avoid_print
-                  print(result);
 
                   // if (result) {
                   //   Get.snackbar(

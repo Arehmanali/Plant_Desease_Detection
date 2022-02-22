@@ -7,7 +7,7 @@ class TabIconData {
     required this.index,
     required this.selectedImagePath,
     required this.isSelected,
-    required this.animationController,
+    this.animationController,
     required this.label,
   });
 
@@ -16,7 +16,7 @@ class TabIconData {
   bool isSelected;
   int index;
   String label;
-  AnimationController animationController;
+  AnimationController? animationController;
 
   static List<TabIconData> tabIconsList = <TabIconData>[
     TabIconData(
@@ -24,9 +24,8 @@ class TabIconData {
       selectedImagePath: 'assets/images/farm_management_tab_selected.png',
       index: 0,
       isSelected: true,
-      label: 'Manage', 
-      animationController: '',
-      
+      label: 'Manage',
+      animationController: null,
     ),
     TabIconData(
       imagePath: 'assets/images/IoT_monitoring_tab.png',
@@ -34,7 +33,7 @@ class TabIconData {
       index: 1,
       isSelected: false,
       label: 'Monitor',
-      animationController:  ,
+      animationController: null,
     ),
     TabIconData(
       imagePath: 'assets/images/disease_detection_tab.png',

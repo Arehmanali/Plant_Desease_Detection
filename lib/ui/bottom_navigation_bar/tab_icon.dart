@@ -23,14 +23,14 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
         if (status == AnimationStatus.completed) {
           if (!mounted) return;
           widget.removeAllSelect();
-          widget.tabIconData.animationController.reverse();
+          widget.tabIconData.animationController!.reverse();
         }
       });
     super.initState();
   }
 
   void setAnimation() {
-    widget.tabIconData.animationController.forward();
+    widget.tabIconData.animationController!.forward();
   }
 
   @override
@@ -56,7 +56,7 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
                   alignment: Alignment.center,
                   scale: Tween<double>(begin: 0.88, end: 1.0).animate(
                       CurvedAnimation(
-                          parent: widget.tabIconData.animationController,
+                          parent: widget.tabIconData.animationController!,
                           curve: const Interval(0.1, 1.0,
                               curve: Curves.fastOutSlowIn))),
                   child: Image.asset(widget.tabIconData.isSelected
@@ -71,7 +71,7 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
                     alignment: Alignment.center,
                     scale: Tween<double>(begin: 0.0, end: 1.0).animate(
                         CurvedAnimation(
-                            parent: widget.tabIconData.animationController,
+                            parent: widget.tabIconData.animationController!,
                             curve: const Interval(0.2, 1.0,
                                 curve: Curves.fastOutSlowIn))),
                     child: Container(
@@ -92,7 +92,7 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
                     alignment: Alignment.center,
                     scale: Tween<double>(begin: 0.0, end: 1.0).animate(
                         CurvedAnimation(
-                            parent: widget.tabIconData.animationController,
+                            parent: widget.tabIconData.animationController!,
                             curve: const Interval(0.5, 0.8,
                                 curve: Curves.fastOutSlowIn))),
                     child: Container(
@@ -113,7 +113,7 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
                     alignment: Alignment.center,
                     scale: Tween<double>(begin: 0.0, end: 1.0).animate(
                         CurvedAnimation(
-                            parent: widget.tabIconData.animationController,
+                            parent: widget.tabIconData.animationController!,
                             curve: const Interval(0.5, 0.6,
                                 curve: Curves.fastOutSlowIn))),
                     child: Container(

@@ -28,7 +28,7 @@ class ForecastViewModel with ChangeNotifier {
   late String _city;
   late double _latitude;
   late double _longitude;
-  late List<dynamic> _daily;
+  late List<Weather> _daily;
   late bool _isDayTime;
 
   WeatherCondition get condition => _condition;

@@ -3,15 +3,15 @@ import 'dart:convert';
 import 'package:agricure/data/farm/models/Forecast.dart';
 import 'package:agricure/data/farm/models/Location.dart';
 import 'package:agricure/data/farm/services/weather_api.dart';
-import 'package:farmassist/data/farm/models/Forecast.dart';
-import 'package:farmassist/data/farm/models/Location.dart';
-import 'package:farmassist/data/farm/services/weather_api.dart';
+import 'package:agricure/data/farm/models/Forecast.dart';
+import 'package:agricure/data/farm/models/Location.dart';
+import 'package:agricure/data/farm/services/weather_api.dart';
 import 'package:http/http.dart' as http;
 
 class OpenWeatherMapWeatherApi extends WeatherApi {
   static const endPointUrl = 'https://api.openweathermap.org/data/2.5';
   static const apiKey = "92ef38427d2c28239bb706af37d77737";
-  http.Client httpClient;
+  late http.Client httpClient;
 
   OpenWeatherMapWeatherApi() {
     this.httpClient = new http.Client();
