@@ -6,7 +6,7 @@ class Forecast {
   final DateTime lastUpdated;
   final double longitude;
   final double latitude;
-  final List<dynamic> daily;
+  final List<Weather> daily;
   final Weather current;
   final bool isDayTime;
   String city;
@@ -37,7 +37,7 @@ class Forecast {
 
     // get the forecast for the next 3 days, excluding the current day
     bool hasDaily = json['daily'] != null;
-    var tempDaily = [];
+    List<Weather> tempDaily = [];
     if (hasDaily) {
       List items = json['daily'];
       tempDaily = items
