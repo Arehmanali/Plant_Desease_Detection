@@ -32,19 +32,16 @@ class _WeatherHomeStatisticsState extends State<WeatherHomeStatistics> {
             height: 160,
             child: ListView(
               children: <Widget>[
-                weatherViewModel.daily==null
+                weatherViewModel.daily == null
                     ? const Center(
-                    child: Text('Ooops...something went wrong',
-                        style: TextStyle(
-                            fontSize: 21, color: Colors.white)))
-                    : Column(children:[
-                  buildDailySummary(weatherViewModel.daily)
-                  ],
-                ),
+                        child: Text('Ooops...something went wrong',
+                            style:
+                                TextStyle(fontSize: 21, color: Colors.white)))
+                    : Column(
+                        children: [buildDailySummary(weatherViewModel.daily)],
+                      ),
               ],
-            )
-        )
-    );
+            )));
   }
 
   Widget buildDailySummary(List<Weather> dailyForecast) {
@@ -68,8 +65,7 @@ class _WeatherHomeStatisticsState extends State<WeatherHomeStatistics> {
               DailySummaryView(weather: dailyForecast[5]),
             ],
           )
-        ]
-    );
+        ]);
   }
 
   Widget buildBusyIndicator() {

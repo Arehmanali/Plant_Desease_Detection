@@ -44,7 +44,7 @@ class App extends StatelessWidget {
         providers: [
           RepositoryProvider<AuthenticationRepository>.value(
             value: _authenticationRepository,
-          ),
+          )
         ],
         child: AppView(),
       ),
