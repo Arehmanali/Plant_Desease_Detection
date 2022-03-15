@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:agricure/data/authentication/models/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-//import 'package:farmassist/data/authentication/models/user.dart';
+import 'package:agricure/data/authentication/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:meta/meta.dart';
@@ -112,7 +112,7 @@ class AuthenticationRepository {
     required String email,
     required String password,
   }) async {
-    assert(email != null && password != null);
+    assert(email.isNotEmpty && password.isNotEmpty);
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
         email: email,

@@ -1,3 +1,5 @@
+// @dart=2.9
+
 // ignore_for_file: deprecated_member_use
 import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
@@ -32,7 +34,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,7 @@ class MyApp extends StatelessWidget {
 }
 
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({Key? key}) : super(key: key);
+  const WelcomePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +116,7 @@ class WelcomePage extends StatelessWidget {
 }
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({Key key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
@@ -123,7 +125,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   List<SliderModel> mySLides = <SliderModel>[];
   int slideIndex = 0;
-  late PageController controller;
+  PageController controller;
 
   Widget _buildPageIndicator(bool isCurrentPage) {
     return Container(
@@ -388,9 +390,9 @@ void _settingModalBottomSheet(BuildContext context) {
 }
 
 class SlideTile extends StatelessWidget {
-  late String imagePath, title, desc;
+  String imagePath, title, desc;
 
-  SlideTile({Key? key, imagePath, title, desc}) : super(key: key);
+  SlideTile({Key key, imagePath, title, desc}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

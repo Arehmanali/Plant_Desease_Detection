@@ -1,11 +1,9 @@
 import 'package:agricure/data/farm/models/Weather.dart';
 import 'package:agricure/data/farm/view_model/weather_app_forecast_viewmodel.dart';
-import 'package:agricure/ui/farm/weather/weatherSummaryView.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'DailySummaryView.dart';
-import 'cityEntryView.dart';
 import 'gradient.dart';
 
 class WeatherHomeStatistics extends StatefulWidget {
@@ -32,22 +30,19 @@ class _WeatherHomeStatisticsState extends State<WeatherHomeStatistics> {
             height: 160,
             child: ListView(
               children: <Widget>[
-                weatherViewModel.daily==null
+                weatherViewModel.daily.isEmpty
                     ? const Center(
-                    child: Text('Ooops...something went wrong',
-                        style: TextStyle(
-                            fontSize: 21, color: Colors.white)))
-                    : Column(children:[
-                  buildDailySummary(weatherViewModel.daily)
-                  ],
-                ),
+                        child: Text('Ooops...something went wrong',
+                            style:
+                                TextStyle(fontSize: 21, color: Colors.white)))
+                    : Column(
+                        children: [buildDailySummary(weatherViewModel.daily)],
+                      ),
               ],
-            )
-        )
-    );
+            )));
   }
 
-  Widget buildDailySummary(List<Weather> dailyForecast) {
+  Widget buildDailySummary(List<dynamic> dailyForecast) {
     return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -68,8 +63,7 @@ class _WeatherHomeStatisticsState extends State<WeatherHomeStatistics> {
               DailySummaryView(weather: dailyForecast[5]),
             ],
           )
-        ]
-    );
+        ]);
   }
 
   Widget buildBusyIndicator() {

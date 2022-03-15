@@ -3,7 +3,7 @@ import 'dEvent.dart';
 import 'dState.dart';
 
 class DetailBloc extends Bloc<NewsDetailEvent, DetailState> {
-  DetailBloc(DetailState initialState) : super(initialState);
+  DetailBloc(DetailState? initialState) : super(initialState);
 
   DetailState get initialState => LoadingDetail();
 

@@ -15,7 +15,7 @@ class FailureDetail extends DetailState {}
 class LoadedArticle extends DetailState {
   final Article selectedArticle;
 
-  LoadedArticle({required this.selectedArticle});
+  const LoadedArticle({required this.selectedArticle});
 
   @override
   List<Object> get props => [selectedArticle];
