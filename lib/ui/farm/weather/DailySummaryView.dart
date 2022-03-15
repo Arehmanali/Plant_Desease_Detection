@@ -6,9 +6,7 @@ import 'package:intl/intl.dart';
 class DailySummaryView extends StatelessWidget {
   final Weather weather;
 
-  const DailySummaryView({Key? key, required this.weather})
-      : assert(weather != null),
-        super(key: key);
+  const DailySummaryView({Key? key, required this.weather}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

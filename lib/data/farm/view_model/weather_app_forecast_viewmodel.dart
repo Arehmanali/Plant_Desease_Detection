@@ -8,7 +8,6 @@ import 'package:agricure/data/farm/utils/WeatherIconMapper.dart';
 import 'package:agricure/data/farm/utils/weather_strings.dart';
 import 'package:agricure/data/farm/utils/weather_temp.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 
 class ForecastViewModel with ChangeNotifier {
   bool isRequestPending = false;
@@ -18,7 +17,6 @@ class ForecastViewModel with ChangeNotifier {
   late WeatherCondition _condition;
   late String _description;
   late String _iconCode;
-  late IconData _iconData;
   late double _minTemp;
   late double _maxTemp;
   late double _temp;

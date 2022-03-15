@@ -5,12 +5,13 @@ import 'package:agricure/data/farm/resources/repository.dart';
 import 'package:agricure/ui/farm/news/bloc/nBloc.dart';
 import 'package:agricure/ui/farm/news/bloc/nEvent.dart';
 import 'package:agricure/ui/farm/news_details/bloc/dBloc.dart';
-import 'package:agricure/ui/farm/statistics/utils/getEvents.dart';
 import 'package:agricure/ui/home_page.dart';
 import 'package:agricure/ui/login/login_page.dart';
 import 'package:agricure/ui/splash_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 
 import 'data/farm/view_model/cityEntryViewModel.dart';
@@ -20,7 +21,9 @@ class App extends StatelessWidget {
   App({Key? key}) : super(key: key);
 
   final AuthenticationRepository _authenticationRepository =
-      AuthenticationRepository(firebaseAuth: '', googleSignIn: '');
+      AuthenticationRepository(
+          firebaseAuth: FirebaseAuth.instance,
+          googleSignIn: GoogleSignIn.standard());
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,7 @@ class App extends StatelessWidget {
             create: (_) => NewsBloc(repository: Repository())
               ..add(const Fetch(type: 'Science'))),
         BlocProvider<DetailBloc>(
-          create: (_) => DetailBloc(),
+          create: (_) => DetailBloc(null),
         ),
         ChangeNotifierProvider<ForecastViewModel>(
             create: (_) => ForecastViewModel()),
@@ -69,11 +72,12 @@ class _AppViewState extends State<AppView> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: AppTheme.nearlyGreen,
-        accentColor: AppTheme.nearlyGreen,
         appBarTheme: AppTheme.appBarTheme,
         scaffoldBackgroundColor: AppTheme.background,
         textTheme: AppTheme.textTheme,
         inputDecorationTheme: AppTheme.inputDecorationTheme,
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(secondary: AppTheme.nearlyGreen),
       ),
       navigatorKey: _navigatorKey,
       builder: (context, child) {

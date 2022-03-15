@@ -99,21 +99,21 @@ class AppTheme {
   static InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(32.0),
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         width: 0.0,
         style: BorderStyle.none,
       ),
     ),
     errorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(32.0),
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         width: 2.0,
         color: Colors.red,
       ),
     ),
     focusedErrorBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(32.0),
-      borderSide: BorderSide(
+      borderSide: const BorderSide(
         width: 2.0,
         color: Colors.red,
       ),
@@ -121,13 +121,13 @@ class AppTheme {
     filled: true,
     fillColor: white,
     errorMaxLines: 3,
-    labelStyle: TextStyle(
+    labelStyle: const TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 14,
       letterSpacing: 0.2,
       color: lightText,
     ),
-    errorStyle: TextStyle(
+    errorStyle: const TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 14,
       letterSpacing: 0.2,

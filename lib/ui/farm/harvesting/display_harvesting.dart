@@ -114,7 +114,7 @@ class _DisplayHarvestingState extends State<DisplayHarvesting> {
                             keyboardType: TextInputType.number,
                             decoration: const InputDecoration(
                               labelText: "No. of Plants",
-                              icon: const Icon(Icons.format_list_numbered),
+                              icon: Icon(Icons.format_list_numbered),
                             ),
                           ),
                           const SizedBox(height: 10),
