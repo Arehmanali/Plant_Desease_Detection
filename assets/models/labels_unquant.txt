@@ -1,0 +1,15 @@
+0 Apple Scab
+1 Apple Black Rot
+2 Apple Cedar Rust
+3 Apple Healthy
+4 Tomato Bacterial Spot
+5 Tomato Early Blight
+6 Tomato Late Blight
+7 Tomato Leaf Mold
+8 Tomato Septoria Leaf Spot
+9 Tomato Spider Mites Two Spotted Spider Mite
+10 Tomato Target Spot
+11 Tomato Yellow Leaf Curl Virus
+12 Tomato Mosaic Virus
+13 Tomato Healthy
+14 Invalid Category

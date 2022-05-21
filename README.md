@@ -1,4 +1,4 @@
-# agricure
+# agri_cure
 
 A new Flutter project.
 
